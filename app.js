@@ -5,15 +5,43 @@ let currentBall = document.getElementById("current-ball");
 let currentBallCall = document.getElementById("current-ball-call");
 let allDranBallsList = document.getElementById("all-drawn-balls-list");
 
+let availableBalls = [...bingoBallsAndCalls];
 let drawnBalls = [];
 
 nextBallBtn.addEventListener("click", function () {
-  let getRandomBingoBall = Math.floor(Math.random() * 90);
-  let nextBall = bingoBallsAndCalls[getRandomBingoBall];
+  if (availableBalls.length === 0) {
+    console.log("No more balls available.");
+    return;
+  }
 
+  let getRandomIndex = Math.floor(Math.random() * availableBalls.length);
+  let nextBall = availableBalls[getRandomIndex];
+  availableBalls.splice(getRandomIndex, 1);
   drawnBalls.push(nextBall);
-  console.log(drawnBalls);
+  drawnBalls.sort((a, b) => a.Number - b.Number);
   currentBall.innerHTML = nextBall.Number;
   currentBallCall.innerHTML = nextBall.Call;
-  allDranBallsList.innerHTML += nextBall.Number + "--";
+
+  updateDrawnBallsList();
+});
+
+function updateDrawnBallsList() {
+  allDranBallsList.innerHTML = "";
+
+  for (let ball of drawnBalls) {
+    let listItem = document.createElement("li");
+    listItem.textContent = ball.Number;
+    allDranBallsList.appendChild(listItem);
+  }
+}
+
+endGameBtn.addEventListener("click", () => {
+  let userConfirms = confirm("Are you sure you want to end this game?");
+  if (userConfirms == true) {
+    availableBalls = [...bingoBallsAndCalls];
+    drawnBalls = [];
+    allDranBallsList.innerHTML = "";
+    currentBall.innerHTML = "";
+    currentBallCall.innerHTML = "";
+  }
 });
