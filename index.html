@@ -9,15 +9,20 @@
     <title>Marky Marks Bin-Going MAD</title>
   </head>
   <body>
-    <h1>Marky Marks BinGo-ing MAD</h1>
-    <button id="lets-play-bingo-btn">LETS PLAY BINGO</button>
-    <h2 id="current-ball"></h2>
-    <h2 id="current-ball-call"></h2>
+    <div id="start">
+      <h1>MARKY MARKS BINGO TIME</h1>
+      <button id="lets-play-bingo-btn">CLICK ME TO PLAY BINGO</button>
+      <button class="hidden" id="next-ball-btn">DRAW BALL</button>
 
-    <button class="hidden" id="next-ball-btn">NEXT BALL</button>
-    <container id="balls">
-      <h3 id="all-drawn-balls-list"></h3>
-    </container>
-    <button class="hidden" id="end-game-btn">END GAME</button>
+      <div class="hidden" id="ball-call">
+        <h2 id="current-ball-call"></h2>
+        <h2 id="current-ball"></h2>
+      </div>
+
+      <div class="hidden" id="balls">
+        <button class="hidden" id="end-game-btn">END GAME</button>
+        <ul id="all-drawn-balls-list"></ul>
+      </div>
+    </div>
   </body>
 </html>

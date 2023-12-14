@@ -1,43 +1,43 @@
 const bingoBallsAndCalls = [
   {
-    Number: "1",
+    Number: "01",
     Call: "Kelly's Eye",
   },
   {
-    Number: "2",
+    Number: "02",
     Call: "One Little Duck",
   },
   {
-    Number: "3",
+    Number: "03",
     Call: "Cup of Tea",
   },
   {
-    Number: "4",
+    Number: "04",
     Call: "Knock at the Door",
   },
   {
-    Number: "5",
+    Number: "05",
     Call: "Man Alive",
   },
   {
-    Number: "6",
+    Number: "06",
     Call: "Tom Mix",
   },
   {
-    Number: "7",
+    Number: "07",
     Call: "Lucky Seven",
   },
   {
-    Number: "8",
+    Number: "08",
     Call: "Garden Gate",
   },
   {
-    Number: "9",
+    Number: "09",
     Call: "Doctor's Orders",
   },
   {
     Number: "10",
-    Call: "Boris's Den",
+    Call: "Rishi's Den",
   },
   {
     Number: "11",

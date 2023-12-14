@@ -4,6 +4,8 @@ let endGameBtn = document.getElementById("end-game-btn");
 let currentBall = document.getElementById("current-ball");
 let currentBallCall = document.getElementById("current-ball-call");
 let allDranBallsList = document.getElementById("all-drawn-balls-list");
+let ballsContainer = document.getElementById("balls");
+let ballCallContainer = document.getElementById("ball-call");
 
 let availableBalls = [...bingoBallsAndCalls];
 let drawnBalls = [];
@@ -12,10 +14,13 @@ letsPlayBingoBtn.addEventListener("click", function () {
   nextBallBtn.classList.remove("hidden");
   endGameBtn.classList.remove("hidden");
   letsPlayBingoBtn.classList.add("hidden");
-  confirm("Click next ball to start!");
+
+  alert("Click the DRAW BALL button to start!");
 });
 
 nextBallBtn.addEventListener("click", function () {
+  ballCallContainer.classList.remove("hidden");
+  ballsContainer.classList.remove("hidden");
   if (availableBalls.length === 0) {
     console.log("No more balls available.");
     return;
@@ -53,5 +58,7 @@ endGameBtn.addEventListener("click", () => {
     endGameBtn.classList.add("hidden");
     nextBallBtn.classList.add("hidden");
     letsPlayBingoBtn.classList.remove("hidden");
+    ballsContainer.classList.add("hidden");
+    ballCallContainer.classList.add("hidden");
   }
 });
