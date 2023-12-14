@@ -14,3 +14,7 @@ li {
   gap: 10px;
   flex-direction: row;
 }
+
+.hidden {
+  display: none;
+}

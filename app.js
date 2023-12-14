@@ -8,6 +8,13 @@ let allDranBallsList = document.getElementById("all-drawn-balls-list");
 let availableBalls = [...bingoBallsAndCalls];
 let drawnBalls = [];
 
+letsPlayBingoBtn.addEventListener("click", function () {
+  nextBallBtn.classList.remove("hidden");
+  endGameBtn.classList.remove("hidden");
+  letsPlayBingoBtn.classList.add("hidden");
+  confirm("Click next ball to start!");
+});
+
 nextBallBtn.addEventListener("click", function () {
   if (availableBalls.length === 0) {
     console.log("No more balls available.");
@@ -43,5 +50,8 @@ endGameBtn.addEventListener("click", () => {
     allDranBallsList.innerHTML = "";
     currentBall.innerHTML = "";
     currentBallCall.innerHTML = "";
+    endGameBtn.classList.add("hidden");
+    nextBallBtn.classList.add("hidden");
+    letsPlayBingoBtn.classList.remove("hidden");
   }
 });
